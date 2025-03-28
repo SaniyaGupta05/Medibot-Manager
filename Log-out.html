@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Profile</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <style>
+        /* Reset and General Styling */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background-color: #f5f5ff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            padding: 20px;
+        }
+
+        /* Main Container */
+        .container {
+            width: 90%;
+            max-width: 400px;
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            padding-bottom: 20px;
+        }
+
+        /* Profile Header */
+        .profile-header {
+            background-color: #969ff5;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            border-bottom-left-radius: 20px;
+            border-bottom-right-radius: 20px;
+        }
+
+        /* Profile Section */
+        .profile-section {
+            text-align: center;
+            margin-top: 15px;
+        }
+
+        .profile-img-container {
+            position: relative;
+            display: inline-block;
+        }
+
+        .profile-img {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid white;
+        }
+
+        .edit-icon {
+            position: absolute;
+            top: 70px;
+            left: 60%;
+            transform: translateX(-50%);
+            background: #4a67ff;
+            color: white;
+            padding: 5px;
+            border-radius: 50%;
+            font-size: 12px;
+            cursor: pointer;
+        }
+
+        .profile-section h3 {
+            margin-top: 10px;
+            font-size: 16px;
+            color: #333;
+        }
+
+        /* Menu List */
+        .menu-list {
+            margin-top: 10px;
+        }
+
+        .menu-item {
+            display: flex;
+            align-items: center;
+            padding: 12px 20px;
+            font-size: 14px;
+            color: #333;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .menu-item:hover {
+            background: #f0f0ff;
+        }
+
+        .menu-item i {
+            width: 25px;
+            text-align: center;
+            color: #4a67ff;
+        }
+
+        .menu-item span {
+            flex: 1;
+            margin-left: 10px;
+        }
+
+        .menu-item .arrow {
+            color: #4a67ff;
+        }
+
+        /* Logout Popup */
+        .logout-popup {
+            position: fixed;
+            bottom: -200px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 90%;
+            max-width: 400px;
+            background: white;
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            transition: 0.4s;
+            text-align: center;
+        }
+
+        .logout-popup h4 {
+            font-size: 16px;
+            color: #333;
+        }
+
+        .logout-popup p {
+            font-size: 13px;
+            color: #555;
+            margin: 10px 0;
+        }
+
+        .popup-buttons {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 15px;
+        }
+
+        .popup-buttons button {
+            flex: 1;
+            padding: 10px;
+            border-radius: 20px;
+            border: none;
+            cursor: pointer;
+            font-size: 14px;
+            transition: 0.3s;
+        }
+
+        .popup-buttons .cancel {
+            background: #e0e0ff;
+            color: #4a67ff;
+            margin-right: 10px;
+        }
+
+        .popup-buttons .logout {
+            background: #4a67ff;
+            color: white;
+        }
+
+        .show-popup {
+            bottom: 30px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <!-- Profile Section -->
+        <div class="profile-header">
+            <h2>My Profile</h2>
+        </div>
+
+        <div class="profile-section">
+            <div class="profile-img-container">
+                <img src="C:\users\hp\OneDrive\Pictures\Screenshots\Screenshot 2025-03-06 110855.png" alt="Profile" class="profile-img">
+                <i class="fa fa-pencil-alt edit-icon"></i>
+            </div>
+            <h3>John Doe</h3>
+        </div>
+
+        <!-- Menu List -->
+        <div class="menu-list">
+            <div class="menu-item"><i class="fa fa-user"></i> <span>Profile</span> <i class="fa fa-angle-right arrow"></i></div>
+            <div class="menu-item"><i class="fa fa-heart"></i> <span>Favourite</span> <i class="fa fa-angle-right arrow"></i></div>
+            <div class="menu-item"><i class="fa fa-credit-card"></i> <span>Payment Method</span> <i class="fa fa-angle-right arrow"></i></div>
+            <div class="menu-item"><i class="fa fa-lock"></i> <span>Privacy Policy</span> <i class="fa fa-angle-right arrow"></i></div>
+            <div class="menu-item"><i class="fa fa-cog"></i> <span>Settings</span> <i class="fa fa-angle-right arrow"></i></div>
+            <div class="menu-item"><i class="fa fa-question-circle"></i> <span>Help</span> <i class="fa fa-angle-right arrow"></i></div>
+            <div class="menu-item logout-btn" onclick="showLogoutPopup()"><i class="fa fa-sign-out-alt"></i> <span>Logout</span> <i class="fa fa-angle-right arrow"></i></div>
+        </div>
+    </div>
+
+    <!-- Logout Confirmation Popup -->
+    <div class="logout-popup" id="logoutPopup">
+        <h4>Logout</h4>
+        <p>Are you sure you want to log out?</p>
+        <div class="popup-buttons">
+            <button class="cancel" onclick="closeLogoutPopup()">Cancel</button>
+            <button class="logout">Yes, Logout</button>
+        </div>
+    </div>
+
+    <script>
+        function showLogoutPopup() {
+            document.getElementById('logoutPopup').classList.add('show-popup');
+        }
+
+        function closeLogoutPopup() {
+            document.getElementById('logoutPopup').classList.remove('show-popup');
+        }
+    </script>
+
+</body>
+</html>

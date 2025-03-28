@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Help Center</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+        body {
+            background-color: #f5f5ff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            padding: 20px;
+        }
+        .container {
+            width: 90%;
+            max-width: 400px;
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+        .header {
+            background-color: #4a67ff;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            border-bottom-left-radius: 20px;
+            border-bottom-right-radius: 20px;
+            position: relative;
+        }
+        .back-arrow {
+            position: absolute;
+            left: 15px;
+            top: 20px;
+            font-size: 18px;
+            cursor: pointer;
+        }
+        .header h2 {
+            font-size: 18px;
+        }
+        .search-box {
+            background: white;
+            padding: 8px;
+            display: flex;
+            align-items: center;
+            border-radius: 20px;
+            margin-top: 10px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        .search-box input {
+            border: none;
+            outline: none;
+            flex: 1;
+            padding: 5px;
+        }
+        .search-box i {
+            color: #4a67ff;
+            margin-right: 8px;
+        }
+        .tab-buttons {
+            display: flex;
+            justify-content: space-around;
+            margin: 15px 10px;
+        }
+        .tab-buttons button {
+            flex: 1;
+            padding: 10px;
+            border: none;
+            cursor: pointer;
+            font-size: 14px;
+            border-radius: 20px;
+            transition: 0.3s;
+        }
+        .tab-buttons .active {
+            background-color: #4a67ff;
+            color: white;
+        }
+        .category-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 8px;
+            margin: 10px;
+        }
+        .category-buttons button {
+            background: #f0f0ff;
+            border: none;
+            padding: 8px 12px;
+            border-radius: 15px;
+            font-size: 12px;
+            color: #4a67ff;
+            cursor: pointer;
+        }
+        .category-buttons .active {
+            background: #4a67ff;
+            color: white;
+        }
+        .faq-item {
+            background: white;
+            padding: 10px;
+            border-radius: 10px;
+            margin: 8px 10px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+        .faq-item p {
+            font-size: 14px;
+            color: #333;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .faq-item i {
+            color: #4a67ff;
+        }
+        .faq-content {
+            display: none;
+            padding: 10px;
+            font-size: 13px;
+            color: #555;
+        }
+        .faq-item.active .faq-content {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <!-- Header Section -->
+        <div class="header">
+            <i class="fa fa-arrow-left back-arrow"></i>
+            <h2>Help Center</h2>
+            <p>How Can We Help You?</p>
+            <div class="search-box">
+                <i class="fa fa-search"></i>
+                <input type="text" placeholder="Search...">
+            </div>
+        </div>
+
+        <!-- Tabs (FAQ & Contact Us) -->
+        <div class="tab-buttons">
+            <button class="active">FAQ</button>
+            <button>Contact Us</button>
+        </div>
+
+        <!-- Category Buttons -->
+        <div class="category-buttons">
+            <button class="active">Popular Topics</button>
+            <button>General</button>
+            <button>Services</button>
+        </div>
+
+        <!-- FAQ Items -->
+        <div class="faq-item active" onclick="toggleFAQ(this)">
+            <p>What is this app used for? <i class="fa fa-angle-down"></i></p>
+            <div class="faq-content">
+                This app is designed to provide users with a seamless experience in accessing help, managing their accounts, and getting quick support.  
+                <br><br>
+                You can find answers to **frequently asked questions (FAQs)**, contact support, and explore **popular topics** related to our services.
+            </div>
+        </div>
+        <div class="faq-item" onclick="toggleFAQ(this)">
+            <p>How can I reset my password? <i class="fa fa-angle-down"></i></p>
+        </div>
+        <div class="faq-item" onclick="toggleFAQ(this)">
+            <p>Is my personal data secure? <i class="fa fa-angle-down"></i></p>
+        </div>
+        <div class="faq-item" onclick="toggleFAQ(this)">
+            <p>How can I contact customer support? <i class="fa fa-angle-down"></i></p>
+        </div>
+        <div class="faq-item" onclick="toggleFAQ(this)">
+            <p>Can I delete my account permanently? <i class="fa fa-angle-down"></i></p>
+        </div>
+    </div>
+
+    <script>
+        function toggleFAQ(element) {
+            element.classList.toggle("active");
+        }
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blue Video Call UI</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <style>
+        /* General Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background-color: #000;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 400px;
+            height: 90vh;
+            background: #1E2A78; /* Dark Blue Background */
+            border-radius: 20px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        /* Video Section */
+        .video-stream {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            filter: brightness(90%);
+        }
+
+        /* Small User Preview */
+        .user-preview {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            width: 70px;
+            height: 90px;
+            border-radius: 10px;
+            overflow: hidden;
+            border: 3px solid #fff;
+            box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.5);
+        }
+
+        .user-preview img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* Volume Control */
+        .volume-control {
+            position: absolute;
+            left: 10px;
+            top: 40%;
+            transform: translateY(-50%);
+            background: rgba(255, 255, 255, 0.2);
+            padding: 10px;
+            border-radius: 15px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            box-shadow: 0px 0px 5px rgba(255, 255, 255, 0.3);
+        }
+
+        .volume-control i {
+            color: white;
+            margin-bottom: 5px;
+        }
+
+        .volume-control input {
+            writing-mode: bt-lr;
+            appearance: slider-vertical;
+            width: 8px;
+            height: 100px;
+            background: white;
+        }
+
+        /* Doctor Info */
+        .doctor-info {
+            position: absolute;
+            bottom: 90px;
+            left: 20px;
+            color: white;
+        }
+
+        .doctor-info h3 {
+            font-size: 18px;
+        }
+
+        .doctor-info p {
+            font-size: 14px;
+            opacity: 0.8;
+        }
+
+        /* Call Controls */
+        .call-controls {
+            position: absolute;
+            bottom: 10px;
+            width: 100%;
+            display: flex;
+            justify-content: space-around;
+            padding: 12px;
+            background: linear-gradient(to top, #2F3EB1, #5063E2); /* Blue Gradient */
+            border-top-left-radius: 20px;
+            border-top-right-radius: 20px;
+            box-shadow: 0px -2px 5px rgba(0, 0, 0, 0.3);
+        }
+
+        .call-controls i {
+            font-size: 22px;
+            color: white;
+            padding: 12px;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 50%;
+            cursor: pointer;
+            transition: 0.2s ease-in-out;
+        }
+
+        .call-controls i:hover {
+            background: rgba(255, 255, 255, 0.4);
+        }
+
+        .end-call {
+            background: red !important;
+            color: white;
+            padding: 14px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <!-- Video Section -->
+        <img src="C:\Users\hp\OneDrive\Desktop\bhuri1.jpg" alt="Doctor Video" class="video-stream">
+
+        <!-- Small User Video Preview -->
+        <div class="user-preview">
+            <img src="C:\Users\hp\OneDrive\Desktop\bhuri.jpg" alt="User Preview">
+        </div>
+
+        <!-- Volume Control -->
+        <div class="volume-control">
+            <i class="fas fa-volume-up"></i>
+            <input type="range" min="0" max="100">
+        </div>
+
+        <!-- Doctor Info -->
+        <div class="doctor-info">
+            <p>Cardiovascular</p>
+            <h3>Dr. Alan Hathaway</h3>
+        </div>
+
+        <!-- Call Controls -->
+        <div class="call-controls">
+            <i class="fas fa-microphone"></i>
+            <i class="fas fa-video"></i>
+            <i class="fas fa-phone end-call"></i>
+            <i class="fas fa-comment"></i>
+            <i class="fas fa-ellipsis-h"></i>
+        </div>
+    </div>
+
+</body>
+</html>

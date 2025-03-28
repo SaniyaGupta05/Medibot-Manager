@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Doctor Chat UI</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <style>
+        /* General Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background-color: #f5f5ff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 400px;
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            display: flex;
+            flex-direction: column;
+            height: 90vh;
+        }
+
+        /* Header */
+        .header {
+            background: #645dd7;
+            color: white;
+            padding: 15px;
+            text-align: center;
+            font-size: 18px;
+            position: relative;
+        }
+
+        .header i {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 20px;
+            cursor: pointer;
+        }
+
+        .header .menu-icon {
+            left: 15px;
+        }
+
+        .header .video-icon {
+            right: 15px;
+        }
+
+        /* Doctor Profile */
+        .doctor-profile {
+            text-align: center;
+            padding: 15px;
+            background: #f5f5ff;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .doctor-profile img {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+
+        .doctor-profile h3 {
+            margin-top: 10px;
+            font-size: 16px;
+            color: #333;
+        }
+
+        /* Chat Section */
+        .chat-box {
+            flex: 1;
+            padding: 15px;
+            overflow-y: auto;
+        }
+
+        .chat-message {
+            display: flex;
+            align-items: flex-end;
+            margin-bottom: 15px;
+        }
+
+        .chat-message.doctor {
+            justify-content: flex-start;
+        }
+
+        .chat-message.user {
+            justify-content: flex-end;
+        }
+
+        .chat-bubble {
+            max-width: 70%;
+            padding: 10px 15px;
+            border-radius: 15px;
+            font-size: 14px;
+            line-height: 1.4;
+            position: relative;
+        }
+
+        .chat-message.doctor .chat-bubble {
+            background: #645dd7;
+            color: white;
+            border-bottom-left-radius: 0;
+        }
+
+        .chat-message.user .chat-bubble {
+            background: #e0e0e0;
+            color: #333;
+            border-bottom-right-radius: 0;
+        }
+
+        .message-time {
+            font-size: 10px;
+            color: gray;
+            margin-top: 5px;
+            text-align: right;
+        }
+
+        /* Image Message */
+        .chat-image {
+            width: 100px;
+            border-radius: 10px;
+        }
+
+        /* Bottom Navigation */
+        .bottom-nav {
+            display: flex;
+            justify-content: space-around;
+            padding: 10px;
+            background: #645dd7;
+        }
+
+        .bottom-nav i {
+            font-size: 20px;
+            color: white;
+            cursor: pointer;
+            padding: 10px;
+        }
+
+        .bottom-nav i.active {
+            color: #ff0000;
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <!-- Header -->
+        <div class="header">
+            <i class="fas fa-bars menu-icon"></i>
+            Chat
+            <i class="fas fa-video video-icon"></i>
+        </div>
+
+        <!-- Doctor Profile -->
+        <div class="doctor-profile">
+            <img src="C:\Users\hp\OneDrive\Desktop\rutumodi.jpg" alt="Doctor Profile">
+            <h3>Dr. Rutu Modi</h3>
+        </div>
+
+        <!-- Chat Section -->
+        <div class="chat-box">
+            <div class="chat-message doctor">
+                <div class="chat-bubble">
+                    Hi James, this is Dr. Rutu. May I help you?
+                    <div class="message-time">1:05 PM</div>
+                </div>
+            </div>
+
+            <div class="chat-message user">
+                <div class="chat-bubble">
+                    Hi Dr. Rutu! I have burnt my hand, I am feeling sick. Please help me.
+                    <div class="message-time">1:05 PM</div>
+                </div>
+            </div>
+
+            <div class="chat-message user">
+                <img src="C:\users\hp\OneDrive\Desktop\burnt hand .jpg" alt="Burned Hand" class="chat-image">
+                <div class="message-time">1:09 PM</div>
+            </div>
+
+            <div class="chat-message doctor">
+                <div class="chat-bubble">
+                    Just relax and tell me the symptoms you are feeling right now.
+                    <div class="message-time">1:10 PM</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Bottom Navigation -->
+        <div class="bottom-nav">
+            <i class="fas fa-home active"></i>
+            <i class="fas fa-comment-dots"></i>
+            <i class="fas fa-user"></i>
+            <i class="fas fa-calendar-alt"></i>
+        </div>
+    </div>
+
+</body>
+</html>

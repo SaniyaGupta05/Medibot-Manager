@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Help Center</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+        body {
+            background-color: #f5f5ff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            padding: 20px;
+        }
+        .container {
+            width: 90%;
+            max-width: 400px;
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+        .header {
+            background-color: #4a67ff;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            border-bottom-left-radius: 20px;
+            border-bottom-right-radius: 20px;
+            position: relative;
+        }
+        .back-arrow {
+            position: absolute;
+            left: 15px;
+            top: 20px;
+            font-size: 18px;
+            cursor: pointer;
+        }
+        .header h2 {
+            font-size: 18px;
+        }
+        .search-box {
+            background: white;
+            padding: 8px;
+            display: flex;
+            align-items: center;
+            border-radius: 20px;
+            margin-top: 10px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        .search-box input {
+            border: none;
+            outline: none;
+            flex: 1;
+            padding: 5px;
+        }
+        .search-box i {
+            color: #4a67ff;
+            margin-right: 8px;
+        }
+        .tab-buttons {
+            display: flex;
+            justify-content: space-around;
+            margin: 15px 10px;
+        }
+        .tab-buttons button {
+            flex: 1;
+            padding: 10px;
+            border: none;
+            cursor: pointer;
+            font-size: 14px;
+            border-radius: 20px;
+            transition: 0.3s;
+        }
+        .tab-buttons .active {
+            background-color: #4a67ff;
+            color: white;
+        }
+        .faq-list {
+            padding: 10px;
+        }
+        .faq-item {
+            background: white;
+            padding: 10px;
+            border-radius: 10px;
+            margin: 8px 10px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+        .faq-item .icon {
+            width: 30px;
+            height: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #e0e0ff;
+            border-radius: 50%;
+        }
+        .faq-item .icon i {
+            color: #4a67ff;
+        }
+        .faq-item p {
+            font-size: 14px;
+            color: #333;
+            flex: 1;
+            margin-left: 10px;
+        }
+        .faq-item i.arrow {
+            color: #4a67ff;
+        }
+        .faq-content {
+            display: none;
+            padding: 10px;
+            font-size: 13px;
+            color: #555;
+            margin-left: 40px;
+        }
+        .faq-item.active .faq-content {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <!-- Header Section -->
+        <div class="header">
+            <i class="fa fa-arrow-left back-arrow"></i>
+            <h2>Help Center</h2>
+            <p>How Can We Help You?</p>
+            <div class="search-box">
+                <i class="fa fa-search"></i>
+                <input type="text" placeholder="Search...">
+            </div>
+        </div>
+
+        <!-- Tabs (FAQ & Contact Us) -->
+        <div class="tab-buttons">
+            <button class="active">FAQ</button>
+            <button>Contact Us</button>
+        </div>
+
+        <!-- FAQ List -->
+        <div class="faq-list">
+            <div class="faq-item" onclick="toggleFAQ(this)">
+                <div class="icon"><i class="fa fa-headset"></i></div>
+                <p>Customer Service</p>
+                <i class="fa fa-angle-down arrow"></i>
+                <div class="faq-content">Call us at +1-800-555-1234 for support.</div>
+            </div>
+
+            <div class="faq-item" onclick="toggleFAQ(this)">
+                <div class="icon"><i class="fa fa-globe"></i></div>
+                <p>Website</p>
+                <i class="fa fa-angle-down arrow"></i>
+                <div class="faq-content">Visit our website at www.example.com</div>
+            </div>
+
+            <div class="faq-item" onclick="toggleFAQ(this)">
+                <div class="icon"><i class="fa fa-whatsapp"></i></div>
+                <p>WhatsApp</p>
+                <i class="fa fa-angle-down arrow"></i>
+                <div class="faq-content">Chat with us on WhatsApp at +1-800-555-5678.</div>
+            </div>
+
+            <div class="faq-item" onclick="toggleFAQ(this)">
+                <div class="icon"><i class="fa fa-facebook"></i></div>
+                <p>Facebook</p>
+                <i class="fa fa-angle-down arrow"></i>
+                <div class="faq-content">Follow us on Facebook at facebook.com/example.</div>
+            </div>
+
+            <div class="faq-item" onclick="toggleFAQ(this)">
+                <div class="icon"><i class="fa fa-instagram"></i></div>
+                <p>Instagram</p>
+                <i class="fa fa-angle-down arrow"></i>
+                <div class="faq-content">Follow us on Instagram at @example.</div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function toggleFAQ(element) {
+            element.classList.toggle("active");
+        }
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile Page</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background: #f8f8ff;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 400px;
+            background: white;
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .header {
+            text-align: center;
+            color: #6b5bff;
+            font-weight: bold;
+            font-size: 18px;
+            margin-bottom: 15px;
+        }
+
+        .profile-pic {
+            text-align: center;
+            position: relative;
+            margin-bottom: 15px;
+        }
+
+        .profile-pic img {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            border: 3px solid #6b5bff;
+        }
+
+        .edit-icon {
+            position: absolute;
+            right: 120px;
+            bottom: 5px;
+            background: #6b5bff;
+            color: white;
+            border-radius: 50%;
+            padding: 5px;
+            font-size: 12px;
+            cursor: pointer;
+        }
+
+        .username {
+            text-align: center;
+            font-weight: bold;
+            font-size: 16px;
+            margin-bottom: 10px;
+        }
+
+        .menu {
+            list-style: none;
+            padding: 0;
+        }
+
+        .menu li {
+            display: flex;
+            align-items: center;
+            padding: 12px 15px;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        .menu li:hover {
+            background: #efefef;
+        }
+
+        .menu i {
+            color: #6b5bff;
+            font-size: 18px;
+            margin-right: 12px;
+        }
+
+        .menu span {
+            font-size: 14px;
+            flex: 1;
+        }
+
+        .footer-nav {
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            max-width: 400px;
+            background: #6b5bff;
+            display: flex;
+            justify-content: space-around;
+            padding: 10px 0;
+            border-radius: 15px 15px 0 0;
+        }
+
+        .footer-nav i {
+            color: white;
+            font-size: 20px;
+            cursor: pointer;
+        }
+
+        .footer-nav .active {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <div class="header">My Profile</div>
+        <div class="profile-pic">
+            <img src="C:\users\hp\OneDrive\Pictures\Screenshots\Screenshot 2025-02-25 185801.png" alt="Profile Picture">
+            <i class="fa fa-pencil edit-icon"></i>
+        </div>
+        <div class="username">John Doe</div>
+        
+        <ul class="menu">
+            <li><i class="fa fa-user"></i> <span>Profile</span></li>
+            <li><i class="fa fa-heart"></i> <span>Favorite</span></li>
+            <li><i class="fa fa-credit-card"></i> <span>Payment Method</span></li>
+            <li><i class="fa fa-lock"></i> <span>Privacy Policy</span></li>
+            <li><i class="fa fa-cog"></i> <span>Settings</span></li>
+            <li><i class="fa fa-question-circle"></i> <span>Help</span></li>
+            <li><i class="fa fa-sign-out-alt"></i> <span>Logout</span></li>
+        </ul>
+    </div>
+
+    <div class="footer-nav">
+        <i class="fa fa-home"></i>
+        <i class="fa fa-comments"></i>
+        <i class="fa fa-user active"></i>
+        <i class="fa fa-folder"></i>
+        <i class="fa fa-calendar"></i>
+    </div>
+
+</body>
+</html>
