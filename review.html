@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Review</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f9f9f9;
+      margin: 0;
+      padding: 0;
+      text-align: center;
+    }
+
+    .container {
+      max-width: 400px;
+      margin: 0 auto;
+      background-color: #fff;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      padding-bottom: 60px; /* Space for bottom nav */
+    }
+
+    header {
+      background-color: #fff;
+      padding: 20px;
+      text-align: center;
+    }
+
+    h1 {
+      color: #4A90E2;
+      margin: 10px 0;
+    }
+
+    .doctor-info {
+      text-align: center;
+      padding: 20px;
+    }
+
+    .doctor-img {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      object-fit: cover;
+    }
+
+    .doctor-name {
+      font-size: 18px;
+      font-weight: bold;
+      color: #4A90E2;
+      margin: 10px 0 5px;
+    }
+
+    .specialty {
+      font-size: 14px;
+      color: #777;
+    }
+
+    .rating-container {
+      margin-top: 15px;
+    }
+
+    .star {
+      font-size: 24px;
+      color: #ccc;
+      cursor: pointer;
+      transition: color 0.3s ease;
+    }
+
+    .star:hover,
+    .star.active {
+      color: #FFD700;
+    }
+
+    .comment-box {
+      width: 90%;
+      margin: 15px auto;
+      padding: 10px;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+      resize: none;
+      font-size: 14px;
+    }
+
+    .review-btn {
+      margin-top: 15px;
+      background-color: #4A90E2;
+      color: white;
+      border: none;
+      width: 90%;
+      padding: 12px;
+      border-radius: 30px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    .review-btn:hover {
+      background-color: #357ABD;
+    }
+
+    .bottom-nav {
+      display: flex;
+      justify-content: space-around;
+      background-color: #4A90E2;
+      padding: 10px 0;
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+      max-width: 400px;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+    .bottom-nav button {
+      background: none;
+      border: none;
+      cursor: pointer;
+      color: white;
+      font-size: 14px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .bottom-nav i {
+      font-size: 24px;
+    }
+
+    .bottom-nav span {
+      margin-top: 5px;
+      font-size: 12px;
+    }
+
+    .bottom-nav button:hover {
+      color: #e53838;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>Review</h1>
+      <p>We value your feedback! Please share your experience with us.</p>
+    </header>
+
+    <div class="doctor-info">
+      <img src="doctor.jpg" alt="Doctor" class="doctor-img">
+      <p class="doctor-name">Dr. Olivia Turner, M.D.</p>
+      <p class="specialty">Dermato-Endocrinology</p>
+      
+      <div class="rating-container">
+        <i class="fa-solid fa-star star" data-value="1"></i>
+        <i class="fa-solid fa-star star" data-value="2"></i>
+        <i class="fa-solid fa-star star" data-value="3"></i>
+        <i class="fa-solid fa-star star" data-value="4"></i>
+        <i class="fa-solid fa-star star" data-value="5"></i>
+      </div>
+    </div>
+
+    <textarea class="comment-box" placeholder="Enter your comment here..."></textarea>
+
+    <button type="button" class="review-btn">Add Review</button>
+
+    <nav class="bottom-nav">
+      <button><i class="fa-solid fa-house"></i><span>Home</span></button>
+      <button><i class="fa-solid fa-comment-dots"></i><span>Chat</span></button>
+      <button><i class="fa-solid fa-calendar-days"></i><span>Calendar</span></button>
+      <button><i class="fa-solid fa-user"></i><span>Profile</span></button>
+    </nav>
+  </div>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const stars = document.querySelectorAll(".star");
+
+      stars.forEach((star) => {
+        star.addEventListener("click", function () {
+          const rating = this.getAttribute("data-value");
+          
+          // Reset all stars
+          stars.forEach(s => s.classList.remove("active"));
+          
+          // Highlight selected stars
+          for (let i = 0; i < rating; i++) {
+            stars[i].classList.add("active");
+          }
+        });
+      });
+    });
+  </script>
+</body>
+</html>
